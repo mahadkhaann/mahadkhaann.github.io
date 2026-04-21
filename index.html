@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahad Ahmad — Software Engineer & Full Stack Developer</title>
-    <meta name="description" content="Portfolio of Mahad Ahmad — Software Engineer, Full Stack Developer, and Open Source Builder. I build things for the web — and sometimes beyond it.">
+    <meta name="description"
+        content="Portfolio of Mahad Ahmad — Software Engineer, Full Stack Developer, and Open Source Builder. I build things for the web — and sometimes beyond it.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         /* ========== CSS RESET & VARIABLES ========== */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         :root {
-            --bg-primary:    #080808;
-            --bg-secondary:  #111111;
-            --bg-tertiary:   #1a1a1a;
-            --border:        #2a2a2a;
-            --text-primary:  #ffffff;
-            --text-secondary:#a0a0a0;
-            --text-muted:    #505050;
-            --accent-white:  rgba(255,255,255,0.06);
-            --glow:          0 0 30px rgba(255,255,255,0.08);
-            --font-display:  'Syne', sans-serif;
-            --font-mono:     'JetBrains Mono', monospace;
+            --bg-primary: #080808;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --border: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #505050;
+            --accent-white: rgba(255, 255, 255, 0.06);
+            --glow: 0 0 30px rgba(255, 255, 255, 0.08);
+            --font-display: 'Syne', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
         }
 
         html {
@@ -52,8 +58,10 @@
         body::before {
             content: '';
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 9998;
             opacity: 0.035;
@@ -65,25 +73,27 @@
         body::after {
             content: '';
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 9997;
             opacity: 0.02;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(255,255,255,0.03) 2px,
-                rgba(255,255,255,0.03) 4px
-            );
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px);
         }
 
         /* ========== CUSTOM CURSOR ========== */
         .cursor-dot {
             position: fixed;
-            top: 0; left: 0;
-            width: 10px; height: 10px;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
             background: #fff;
             border-radius: 50%;
             pointer-events: none;
@@ -95,9 +105,11 @@
 
         .cursor-ring {
             position: fixed;
-            top: 0; left: 0;
-            width: 36px; height: 36px;
-            border: 1px solid rgba(255,255,255,0.3);
+            top: 0;
+            left: 0;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             pointer-events: none;
             z-index: 99998;
@@ -115,26 +127,39 @@
 
         /* ========== SELECTION ========== */
         ::selection {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             color: #fff;
         }
 
         /* ========== SCROLLBAR ========== */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-primary); }
-        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 0; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
 
         /* ========== FOCUS VISIBLE ========== */
         :focus-visible {
-            outline: 1px solid rgba(255,255,255,0.4);
+            outline: 1px solid rgba(255, 255, 255, 0.4);
             outline-offset: 4px;
         }
 
         /* ========== NAVIGATION ========== */
         nav {
             position: fixed;
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             z-index: 1000;
             padding: 20px 48px;
@@ -146,7 +171,7 @@
         }
 
         nav.scrolled {
-            background: rgba(8,8,8,0.7);
+            background: rgba(8, 8, 8, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom-color: var(--border);
@@ -236,9 +261,11 @@
         .mobile-nav {
             display: none;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(8,8,8,0.97);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(8, 8, 8, 0.97);
             backdrop-filter: blur(30px);
             z-index: 1001;
             align-items: center;
@@ -263,17 +290,43 @@
             animation: mobileNavIn 0.4s ease forwards;
         }
 
-        .mobile-nav a:nth-child(1) { animation-delay: 0.05s; }
-        .mobile-nav a:nth-child(2) { animation-delay: 0.1s; }
-        .mobile-nav a:nth-child(3) { animation-delay: 0.15s; }
-        .mobile-nav a:nth-child(4) { animation-delay: 0.2s; }
-        .mobile-nav a:nth-child(5) { animation-delay: 0.25s; }
-        .mobile-nav a:nth-child(6) { animation-delay: 0.3s; }
-        .mobile-nav a:nth-child(7) { animation-delay: 0.35s; }
-        .mobile-nav a:nth-child(8) { animation-delay: 0.4s; }
+        .mobile-nav a:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .mobile-nav a:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .mobile-nav a:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .mobile-nav a:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .mobile-nav a:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .mobile-nav a:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .mobile-nav a:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+
+        .mobile-nav a:nth-child(8) {
+            animation-delay: 0.4s;
+        }
 
         @keyframes mobileNavIn {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ========== GLOBAL SECTION STYLES ========== */
@@ -320,7 +373,7 @@
             font-family: var(--font-display);
             font-weight: 800;
             font-size: clamp(8rem, 20vw, 16rem);
-            color: rgba(255,255,255,0.02);
+            color: rgba(255, 255, 255, 0.02);
             letter-spacing: -0.04em;
             line-height: 1;
             pointer-events: none;
@@ -334,7 +387,7 @@
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: transform, opacity;
         }
 
@@ -343,14 +396,37 @@
             transform: translateY(0);
         }
 
-        .reveal-delay-1 { transition-delay: 0.08s; }
-        .reveal-delay-2 { transition-delay: 0.16s; }
-        .reveal-delay-3 { transition-delay: 0.24s; }
-        .reveal-delay-4 { transition-delay: 0.32s; }
-        .reveal-delay-5 { transition-delay: 0.40s; }
-        .reveal-delay-6 { transition-delay: 0.48s; }
-        .reveal-delay-7 { transition-delay: 0.56s; }
-        .reveal-delay-8 { transition-delay: 0.64s; }
+        .reveal-delay-1 {
+            transition-delay: 0.08s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.16s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.24s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: 0.32s;
+        }
+
+        .reveal-delay-5 {
+            transition-delay: 0.40s;
+        }
+
+        .reveal-delay-6 {
+            transition-delay: 0.48s;
+        }
+
+        .reveal-delay-7 {
+            transition-delay: 0.56s;
+        }
+
+        .reveal-delay-8 {
+            transition-delay: 0.64s;
+        }
 
         /* ========== 01 / HERO ========== */
         #hero {
@@ -366,8 +442,10 @@
 
         #hero-canvas {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 0;
         }
 
@@ -392,15 +470,25 @@
         }
 
         .hero-available .pulse-dot {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             background: #fff;
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.3); }
+
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
         }
 
         .hero-name {
@@ -438,8 +526,15 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         .hero-tagline {
@@ -478,7 +573,7 @@
         }
 
         .btn:hover {
-            background: rgba(255,255,255,0.06);
+            background: rgba(255, 255, 255, 0.06);
             box-shadow: var(--glow);
             transform: translateY(-2px);
         }
@@ -504,7 +599,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px; height: 36px;
+            width: 36px;
+            height: 36px;
         }
 
         .hero-socials a:hover {
@@ -513,7 +609,8 @@
         }
 
         .hero-socials svg {
-            width: 18px; height: 18px;
+            width: 18px;
+            height: 18px;
             fill: currentColor;
         }
 
@@ -535,7 +632,8 @@
         }
 
         .scroll-indicator .chevron {
-            width: 20px; height: 20px;
+            width: 20px;
+            height: 20px;
             border-right: 1px solid var(--text-muted);
             border-bottom: 1px solid var(--text-muted);
             transform: rotate(45deg);
@@ -543,8 +641,17 @@
         }
 
         @keyframes scrollBounce {
-            0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.5; }
-            50% { transform: rotate(45deg) translateY(6px); opacity: 1; }
+
+            0%,
+            100% {
+                transform: rotate(45deg) translateY(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: rotate(45deg) translateY(6px);
+                opacity: 1;
+            }
         }
 
         /* ========== 02 / ABOUT ========== */
@@ -609,9 +716,11 @@
         .tilt-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), transparent 60%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 60%);
             opacity: 0;
             transition: opacity 0.4s ease;
             pointer-events: none;
@@ -640,55 +749,81 @@
 
         .geo-art .shape {
             position: absolute;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .geo-art .shape-1 {
-            width: 180px; height: 180px;
-            top: 20%; left: 15%;
+            width: 180px;
+            height: 180px;
+            top: 20%;
+            left: 15%;
             transform: rotate(45deg);
         }
 
         .geo-art .shape-2 {
-            width: 120px; height: 120px;
-            top: 35%; right: 20%;
+            width: 120px;
+            height: 120px;
+            top: 35%;
+            right: 20%;
             border-radius: 50%;
-            border-color: rgba(255,255,255,0.05);
+            border-color: rgba(255, 255, 255, 0.05);
         }
 
         .geo-art .shape-3 {
-            width: 80px; height: 80px;
-            bottom: 20%; left: 35%;
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 35%;
             transform: rotate(15deg);
-            background: rgba(255,255,255,0.02);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .geo-art .shape-4 {
-            width: 200px; height: 1px;
-            background: rgba(255,255,255,0.06);
-            top: 60%; left: 10%;
+            width: 200px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            top: 60%;
+            left: 10%;
             transform: rotate(-20deg);
             border: none;
         }
 
         .geo-art .shape-5 {
-            width: 1px; height: 200px;
-            background: rgba(255,255,255,0.04);
-            top: 10%; right: 35%;
+            width: 1px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.04);
+            top: 10%;
+            right: 35%;
             border: none;
         }
 
         .geo-art .dot {
             position: absolute;
-            width: 4px; height: 4px;
-            background: rgba(255,255,255,0.2);
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
         }
 
-        .geo-art .dot-1 { top: 30%; left: 50%; }
-        .geo-art .dot-2 { top: 55%; left: 25%; }
-        .geo-art .dot-3 { top: 45%; right: 30%; }
-        .geo-art .dot-4 { bottom: 30%; right: 25%; }
+        .geo-art .dot-1 {
+            top: 30%;
+            left: 50%;
+        }
+
+        .geo-art .dot-2 {
+            top: 55%;
+            left: 25%;
+        }
+
+        .geo-art .dot-3 {
+            top: 45%;
+            right: 30%;
+        }
+
+        .geo-art .dot-4 {
+            bottom: 30%;
+            right: 25%;
+        }
 
         /* ========== 03 / SKILLS ========== */
         #skills {
@@ -747,7 +882,7 @@
 
         .skill-tag:hover {
             transform: translateY(-4px) rotate(0deg) !important;
-            border-color: rgba(255,255,255,0.4);
+            border-color: rgba(255, 255, 255, 0.4);
             color: var(--text-primary);
             box-shadow: var(--glow);
         }
@@ -773,9 +908,11 @@
         .project-card::after {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
             opacity: 0;
             transition: opacity 0.4s ease;
             pointer-events: none;
@@ -784,7 +921,7 @@
         .project-card:hover {
             border-top-color: var(--text-primary);
             transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
         }
 
         .project-card:hover::after {
@@ -795,7 +932,7 @@
             font-family: var(--font-display);
             font-weight: 800;
             font-size: 4rem;
-            color: rgba(255,255,255,0.04);
+            color: rgba(255, 255, 255, 0.04);
             letter-spacing: -0.04em;
             line-height: 1;
             margin-bottom: 16px;
@@ -873,7 +1010,8 @@
         .timeline::before {
             content: '';
             position: absolute;
-            top: 0; bottom: 0;
+            top: 0;
+            bottom: 0;
             left: 50%;
             width: 1px;
             background: var(--border);
@@ -900,7 +1038,8 @@
         .timeline-node {
             position: absolute;
             top: 6px;
-            width: 10px; height: 10px;
+            width: 10px;
+            height: 10px;
             background: var(--text-primary);
             border-radius: 0;
             z-index: 1;
@@ -921,16 +1060,27 @@
         .timeline-node.current::after {
             content: '';
             position: absolute;
-            top: -6px; left: -6px;
-            width: 22px; height: 22px;
-            border: 1px solid rgba(255,255,255,0.3);
+            top: -6px;
+            left: -6px;
+            width: 22px;
+            height: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 0;
             animation: pulseRingExpand 2s ease-in-out infinite;
         }
 
         @keyframes pulseRingExpand {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.4); opacity: 0; }
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
         }
 
         .timeline-company {
@@ -990,9 +1140,11 @@
         .blog-card::before {
             content: '';
             position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%);
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
             transition: left 0.6s ease;
             pointer-events: none;
         }
@@ -1000,8 +1152,10 @@
         .blog-card::after {
             content: '';
             position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 2px;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
             background: var(--text-primary);
             transition: width 0.4s ease;
         }
@@ -1107,7 +1261,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--text-primary);
-            box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
         .form-group textarea {
@@ -1134,7 +1288,7 @@
         .btn-submit:hover {
             background: #e0e0e0;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
         .contact-info {
@@ -1202,7 +1356,8 @@
         }
 
         .social-row svg {
-            width: 18px; height: 18px;
+            width: 18px;
+            height: 18px;
             fill: currentColor;
             flex-shrink: 0;
         }
@@ -1237,8 +1392,13 @@
         }
 
         @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .footer-bottom {
@@ -1395,12 +1555,22 @@
 
         /* Hide cursor on touch devices */
         @media (pointer: coarse) {
-            body { cursor: auto; }
-            .cursor-dot, .cursor-ring { display: none; }
-            * { cursor: auto !important; }
+            body {
+                cursor: auto;
+            }
+
+            .cursor-dot,
+            .cursor-ring {
+                display: none;
+            }
+
+            * {
+                cursor: auto !important;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Custom Cursor -->
@@ -1449,29 +1619,44 @@
             <div class="hero-typing reveal reveal-delay-2">
                 <span id="typingText"></span><span class="cursor-blink"></span>
             </div>
-            <p class="hero-tagline reveal reveal-delay-3">"A computer science student passionate about web & mobile development, video editing, and Python."</p>
+            <p class="hero-tagline reveal reveal-delay-3">"A computer science student passionate about web & mobile
+                development, video editing, and Python."</p>
             <div class="hero-ctas reveal reveal-delay-4">
                 <a href="#about" class="btn">[ View My Work ]</a>
                 <!-- <a href="./cv.pdf" class="btn btn-filled" download>[ Download CV ]</a> -->
             </div>
             <div class="hero-socials reveal reveal-delay-5">
                 <a href="https://github.com/mahadkhaann" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/mahadkhaann/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <a href="https://www.linkedin.com/in/mahadkhaann/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
                 </a>
-                <a href="https://instagram.com/mahadkhaan" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                <a href="https://instagram.com/mahadkhaann" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                    </svg>
                 </a>
                 <a href="mailto:mahadahmadmarwat@gmail.com" aria-label="Email">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
                 </a>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="chevron"></div>
-        </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="chevron"></div>
+            </div>
     </section>
 
     <!-- 02 / ABOUT -->
@@ -1482,7 +1667,10 @@
                 <div class="section-label reveal">02 / About</div>
                 <h2 class="section-heading reveal reveal-delay-1">Building digital<br>experiences that matter.</h2>
                 <p class="about-bio reveal reveal-delay-2">
-                    I am a computer science student, constantly learning and exploring new technologies. I have a strong foundation in mobile and web development, along with expertise in video editing and Python. What drives me is the relentless pursuit of building tools and experiences that genuinely improve how people interact with technology.
+                    I am a computer science student, constantly learning and exploring new technologies. I have a strong
+                    foundation in mobile and web development, along with expertise in video editing and Python. What
+                    drives me is the relentless pursuit of building tools and experiences that genuinely improve how
+                    people interact with technology.
                 </p>
                 <div class="about-stats reveal reveal-delay-3">
                     <div class="stat">
@@ -1624,7 +1812,8 @@
                 <div class="timeline-company">Personal Projects</div>
                 <div class="timeline-role">Full Stack Developer & Video Editor</div>
                 <div class="timeline-dates">2023 — Present</div>
-                <div class="timeline-desc">Building personal projects to explore web and mobile application development, while also applying my video editing skills to create content.</div>
+                <div class="timeline-desc">Building personal projects to explore web and mobile application development,
+                    while also applying my video editing skills to create content.</div>
             </div>
         </div>
     </section>
@@ -1675,7 +1864,8 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                    <textarea id="message" name="message" placeholder="Tell me about your project..."
+                        required></textarea>
                 </div>
                 <button type="submit" class="btn-submit">[ SEND MESSAGE → ]</button>
             </form>
@@ -1687,20 +1877,35 @@
                 <div>
                     <div class="contact-socials-label">Socials</div>
                     <div class="contact-socials">
-                        <a href="https://github.com/mahadkhaann" target="_blank" rel="noopener noreferrer" class="social-row" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <a href="https://github.com/mahadkhaann" target="_blank" rel="noopener noreferrer"
+                            class="social-row" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
                             GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/mahadkhaann/" target="_blank" rel="noopener noreferrer" class="social-row" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <a href="https://www.linkedin.com/in/mahadkhaann/" target="_blank" rel="noopener noreferrer"
+                            class="social-row" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
                             LinkedIn
                         </a>
-                        <a href="https://instagram.com/mahadkhaan" target="_blank" rel="noopener noreferrer" class="social-row" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <a href="https://instagram.com/mahadkhaann" target="_blank" rel="noopener noreferrer"
+                            class="social-row" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
                             Instagram
                         </a>
                         <a href="mailto:mahadahmadmarwat@gmail.com" class="social-row" aria-label="Email">
-                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
                             mahadahmadmarwat@gmail.com
                         </a>
                     </div>
@@ -1732,192 +1937,192 @@
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
-    (function() {
-        'use strict';
+        (function () {
+            'use strict';
 
-        // ===== CUSTOM CURSOR =====
-        const cursorDot = document.getElementById('cursorDot');
-        const cursorRing = document.getElementById('cursorRing');
-        let mouseX = 0, mouseY = 0;
-        let ringX = 0, ringY = 0;
+            // ===== CUSTOM CURSOR =====
+            const cursorDot = document.getElementById('cursorDot');
+            const cursorRing = document.getElementById('cursorRing');
+            let mouseX = 0, mouseY = 0;
+            let ringX = 0, ringY = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursorDot.style.left = mouseX + 'px';
-            cursorDot.style.top = mouseY + 'px';
-        });
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+            });
 
-        function animateCursorRing() {
-            ringX += (mouseX - ringX) * 0.15;
-            ringY += (mouseY - ringY) * 0.15;
-            cursorRing.style.left = ringX + 'px';
-            cursorRing.style.top = ringY + 'px';
-            requestAnimationFrame(animateCursorRing);
-        }
-        animateCursorRing();
-
-        // Hover state for interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, input, textarea, .btn, .btn-submit, .skill-tag');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
-
-        // ===== NAVIGATION =====
-        const nav = document.getElementById('mainNav');
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            // Nav background
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
+            function animateCursorRing() {
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
+                cursorRing.style.left = ringX + 'px';
+                cursorRing.style.top = ringY + 'px';
+                requestAnimationFrame(animateCursorRing);
             }
+            animateCursorRing();
 
-            // Active section highlight
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 200;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
+            // Hover state for interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, input, textarea, .btn, .btn-submit, .skill-tag');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
             });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-section') === current) {
-                    link.classList.add('active');
+            // ===== NAVIGATION =====
+            const nav = document.getElementById('mainNav');
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            window.addEventListener('scroll', () => {
+                // Nav background
+                if (window.scrollY > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
                 }
+
+                // Active section highlight
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 200;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === current) {
+                        link.classList.add('active');
+                    }
+                });
             });
-        });
 
-        // ===== HAMBURGER MENU =====
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobileNav');
+            // ===== HAMBURGER MENU =====
+            const hamburger = document.getElementById('hamburger');
+            const mobileNav = document.getElementById('mobileNav');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            mobileNav.classList.toggle('open');
-            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-        });
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                mobileNav.classList.toggle('open');
+                document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+            });
 
-        window.closeMobileNav = function() {
-            hamburger.classList.remove('open');
-            mobileNav.classList.remove('open');
-            document.body.style.overflow = '';
-        };
+            window.closeMobileNav = function () {
+                hamburger.classList.remove('open');
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            };
 
-        // ===== TYPING ANIMATION =====
-        const titles = [
-            'Software Engineer',
-            'Full Stack Developer',
-            'Problem Solver',
-            'Open Source Builder'
-        ];
-        const typingEl = document.getElementById('typingText');
-        let titleIndex = 0, charIndex = 0, isDeleting = false;
+            // ===== TYPING ANIMATION =====
+            const titles = [
+                'Software Engineer',
+                'Full Stack Developer',
+                'Problem Solver',
+                'Open Source Builder'
+            ];
+            const typingEl = document.getElementById('typingText');
+            let titleIndex = 0, charIndex = 0, isDeleting = false;
 
-        function typeEffect() {
-            const current = titles[titleIndex];
-            if (isDeleting) {
-                typingEl.textContent = current.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingEl.textContent = current.substring(0, charIndex + 1);
-                charIndex++;
+            function typeEffect() {
+                const current = titles[titleIndex];
+                if (isDeleting) {
+                    typingEl.textContent = current.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingEl.textContent = current.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let delay = isDeleting ? 40 : 80;
+
+                if (!isDeleting && charIndex === current.length) {
+                    delay = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    titleIndex = (titleIndex + 1) % titles.length;
+                    delay = 400;
+                }
+
+                setTimeout(typeEffect, delay);
             }
+            typeEffect();
 
-            let delay = isDeleting ? 40 : 80;
+            // ===== SCROLL REVEAL (IntersectionObserver) =====
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-            if (!isDeleting && charIndex === current.length) {
-                delay = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                titleIndex = (titleIndex + 1) % titles.length;
-                delay = 400;
-            }
+            revealElements.forEach(el => revealObserver.observe(el));
 
-            setTimeout(typeEffect, delay);
-        }
-        typeEffect();
+            // ===== STAT COUNTER ANIMATION =====
+            const statNumbers = document.querySelectorAll('.stat-number');
+            let statsAnimated = false;
 
-        // ===== SCROLL REVEAL (IntersectionObserver) =====
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !statsAnimated) {
+                        statsAnimated = true;
+                        statNumbers.forEach(stat => {
+                            const target = parseInt(stat.getAttribute('data-target'));
+                            const suffix = stat.getAttribute('data-suffix') || '';
+                            let current = 0;
+                            const increment = target / 60;
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    current = target;
+                                    clearInterval(timer);
+                                }
+                                stat.textContent = Math.floor(current) + suffix;
+                            }, 25);
+                        });
+                    }
+                });
+            }, { threshold: 0.3 });
 
-        revealElements.forEach(el => revealObserver.observe(el));
+            document.querySelectorAll('.about-stats').forEach(el => statsObserver.observe(el));
 
-        // ===== STAT COUNTER ANIMATION =====
-        const statNumbers = document.querySelectorAll('.stat-number');
-        let statsAnimated = false;
+            // ===== 3D TILT CARDS =====
+            const tiltCards = document.querySelectorAll('[data-tilt]');
 
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    statsAnimated = true;
-                    statNumbers.forEach(stat => {
-                        const target = parseInt(stat.getAttribute('data-target'));
-                        const suffix = stat.getAttribute('data-suffix') || '';
-                        let current = 0;
-                        const increment = target / 60;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(timer);
-                            }
-                            stat.textContent = Math.floor(current) + suffix;
-                        }, 25);
-                    });
-                }
-            });
-        }, { threshold: 0.3 });
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    const rotateX = ((e.clientY - centerY) / (rect.height / 2)) * -15;
+                    const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 15;
 
-        document.querySelectorAll('.about-stats').forEach(el => statsObserver.observe(el));
+                    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
 
-        // ===== 3D TILT CARDS =====
-        const tiltCards = document.querySelectorAll('[data-tilt]');
+                    // Light reflection
+                    const percentX = ((e.clientX - rect.left) / rect.width) * 100;
+                    const percentY = ((e.clientY - rect.top) / rect.height) * 100;
+                    if (card.querySelector('::before') !== null || true) {
+                        card.style.setProperty('--mx', percentX + '%');
+                        card.style.setProperty('--my', percentY + '%');
+                        const beforeEl = card.style;
+                        // Update pseudo-element via CSS custom property
+                    }
+                });
 
-        tiltCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
-                const rotateX = ((e.clientY - centerY) / (rect.height / 2)) * -15;
-                const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 15;
-
-                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-
-                // Light reflection
-                const percentX = ((e.clientX - rect.left) / rect.width) * 100;
-                const percentY = ((e.clientY - rect.top) / rect.height) * 100;
-                if (card.querySelector('::before') !== null || true) {
-                    card.style.setProperty('--mx', percentX + '%');
-                    card.style.setProperty('--my', percentY + '%');
-                    const beforeEl = card.style;
-                    // Update pseudo-element via CSS custom property
-                }
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+                });
             });
 
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
-            });
-        });
-
-        // Dynamic pseudo-element light tracking via CSS custom properties
-        // We inject a style for ::before to use the custom properties
-        const tiltStyle = document.createElement('style');
-        tiltStyle.textContent = `
+            // Dynamic pseudo-element light tracking via CSS custom properties
+            // We inject a style for ::before to use the custom properties
+            const tiltStyle = document.createElement('style');
+            tiltStyle.textContent = `
             .tilt-card::before {
                 background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.08), transparent 60%) !important;
             }
@@ -1925,163 +2130,164 @@
                 opacity: 1 !important;
             }
         `;
-        document.head.appendChild(tiltStyle);
+            document.head.appendChild(tiltStyle);
 
-        // ===== PARALLAX WATERMARKS =====
-        const watermarks = document.querySelectorAll('.parallax-watermark');
-
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            watermarks.forEach(wm => {
-                const section = wm.parentElement;
-                const sectionTop = section.offsetTop;
-                const offset = (scrollY - sectionTop) * 0.15;
-                wm.style.transform = `translateY(${offset}px)`;
-            });
-        });
-
-        // ===== CONTACT FORM HANDLER =====
-        window.handleSubmit = function(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('.btn-submit');
-            const originalText = btn.textContent;
-            btn.textContent = '[ SENT ✓ ]';
-            btn.style.background = 'transparent';
-            btn.style.color = 'var(--text-primary)';
-            btn.style.borderColor = 'var(--text-primary)';
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.background = '';
-                btn.style.color = '';
-                btn.style.borderColor = '';
-                e.target.reset();
-            }, 2500);
-        };
-
-        // ===== THREE.JS HERO SCENE =====
-        function initThreeScene() {
-            const canvas = document.getElementById('hero-canvas');
-            const heroSection = document.getElementById('hero');
-
-            const renderer = new THREE.WebGLRenderer({
-                canvas: canvas,
-                alpha: true,
-                antialias: true
-            });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-            const scene = new THREE.Scene();
-
-            const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
-            camera.position.z = 5;
-
-            // Wireframe Icosahedron
-            const icoGeometry = new THREE.IcosahedronGeometry(2, 1);
-            const wireframe = new THREE.WireframeGeometry(icoGeometry);
-            const icoMaterial = new THREE.LineBasicMaterial({
-                color: 0xffffff,
-                transparent: true,
-                opacity: 0.12
-            });
-            const icosahedron = new THREE.LineSegments(wireframe, icoMaterial);
-            icosahedron.position.x = 2;
-            icosahedron.position.y = 0.3;
-            scene.add(icosahedron);
-
-            // Particle System
-            const particleCount = 120;
-            const particleGeometry = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-            const opacities = new Float32Array(particleCount);
-
-            for (let i = 0; i < particleCount; i++) {
-                positions[i * 3] = (Math.random() - 0.5) * 12;
-                positions[i * 3 + 1] = (Math.random() - 0.5) * 8;
-                positions[i * 3 + 2] = (Math.random() - 0.5) * 6;
-                opacities[i] = Math.random() * 0.4 + 0.1;
-            }
-
-            particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-            const particleMaterial = new THREE.PointsMaterial({
-                color: 0xffffff,
-                size: 0.02,
-                transparent: true,
-                opacity: 0.4,
-                sizeAttenuation: true
-            });
-
-            const particles = new THREE.Points(particleGeometry, particleMaterial);
-            scene.add(particles);
-
-            // Mouse interaction
-            let targetRotX = 0, targetRotY = 0;
-            let currentRotX = 0, currentRotY = 0;
-
-            document.addEventListener('mousemove', (e) => {
-                targetRotX = ((e.clientY / window.innerHeight) - 0.5) * 0.6;
-                targetRotY = ((e.clientX / window.innerWidth) - 0.5) * 0.6;
-            });
-
-            // Parallax on scroll
-            let heroParallaxY = 0;
+            // ===== PARALLAX WATERMARKS =====
+            const watermarks = document.querySelectorAll('.parallax-watermark');
 
             window.addEventListener('scroll', () => {
-                heroParallaxY = window.scrollY * 0.3;
+                const scrollY = window.scrollY;
+                watermarks.forEach(wm => {
+                    const section = wm.parentElement;
+                    const sectionTop = section.offsetTop;
+                    const offset = (scrollY - sectionTop) * 0.15;
+                    wm.style.transform = `translateY(${offset}px)`;
+                });
             });
 
-            // Animation loop
-            function animate() {
-                requestAnimationFrame(animate);
+            // ===== CONTACT FORM HANDLER =====
+            window.handleSubmit = function (e) {
+                e.preventDefault();
+                const btn = e.target.querySelector('.btn-submit');
+                const originalText = btn.textContent;
+                btn.textContent = '[ SENT ✓ ]';
+                btn.style.background = 'transparent';
+                btn.style.color = 'var(--text-primary)';
+                btn.style.borderColor = 'var(--text-primary)';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    btn.style.borderColor = '';
+                    e.target.reset();
+                }, 2500);
+            };
 
-                // Auto-rotate icosahedron
-                icosahedron.rotation.y += 0.001;
-                icosahedron.rotation.x += 0.0005;
+            // ===== THREE.JS HERO SCENE =====
+            function initThreeScene() {
+                const canvas = document.getElementById('hero-canvas');
+                const heroSection = document.getElementById('hero');
 
-                // Mouse-influenced rotation (lerped)
-                currentRotX += (targetRotX - currentRotX) * 0.02;
-                currentRotY += (targetRotY - currentRotY) * 0.02;
-                icosahedron.rotation.x += currentRotX * 0.01;
-                icosahedron.rotation.y += currentRotY * 0.01;
-
-                // Animate particles upward
-                const posArray = particles.geometry.attributes.position.array;
-                for (let i = 0; i < particleCount; i++) {
-                    posArray[i * 3 + 1] += 0.002;
-                    if (posArray[i * 3 + 1] > 4) {
-                        posArray[i * 3 + 1] = -4;
-                    }
-                }
-                particles.geometry.attributes.position.needsUpdate = true;
-
-                // Parallax effect
-                scene.position.y = -heroParallaxY * 0.003;
-
-                renderer.render(scene, camera);
-            }
-            animate();
-
-            // Resize handler
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
+                const renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    alpha: true,
+                    antialias: true
+                });
                 renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        }
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        // Initialize Three.js once the library is loaded
-        if (typeof THREE !== 'undefined') {
-            initThreeScene();
-        } else {
-            window.addEventListener('load', () => {
-                if (typeof THREE !== 'undefined') {
-                    initThreeScene();
+                const scene = new THREE.Scene();
+
+                const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+                camera.position.z = 5;
+
+                // Wireframe Icosahedron
+                const icoGeometry = new THREE.IcosahedronGeometry(2, 1);
+                const wireframe = new THREE.WireframeGeometry(icoGeometry);
+                const icoMaterial = new THREE.LineBasicMaterial({
+                    color: 0xffffff,
+                    transparent: true,
+                    opacity: 0.12
+                });
+                const icosahedron = new THREE.LineSegments(wireframe, icoMaterial);
+                icosahedron.position.x = 2;
+                icosahedron.position.y = 0.3;
+                scene.add(icosahedron);
+
+                // Particle System
+                const particleCount = 120;
+                const particleGeometry = new THREE.BufferGeometry();
+                const positions = new Float32Array(particleCount * 3);
+                const opacities = new Float32Array(particleCount);
+
+                for (let i = 0; i < particleCount; i++) {
+                    positions[i * 3] = (Math.random() - 0.5) * 12;
+                    positions[i * 3 + 1] = (Math.random() - 0.5) * 8;
+                    positions[i * 3 + 2] = (Math.random() - 0.5) * 6;
+                    opacities[i] = Math.random() * 0.4 + 0.1;
                 }
-            });
-        }
 
-    })();
+                particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+                const particleMaterial = new THREE.PointsMaterial({
+                    color: 0xffffff,
+                    size: 0.02,
+                    transparent: true,
+                    opacity: 0.4,
+                    sizeAttenuation: true
+                });
+
+                const particles = new THREE.Points(particleGeometry, particleMaterial);
+                scene.add(particles);
+
+                // Mouse interaction
+                let targetRotX = 0, targetRotY = 0;
+                let currentRotX = 0, currentRotY = 0;
+
+                document.addEventListener('mousemove', (e) => {
+                    targetRotX = ((e.clientY / window.innerHeight) - 0.5) * 0.6;
+                    targetRotY = ((e.clientX / window.innerWidth) - 0.5) * 0.6;
+                });
+
+                // Parallax on scroll
+                let heroParallaxY = 0;
+
+                window.addEventListener('scroll', () => {
+                    heroParallaxY = window.scrollY * 0.3;
+                });
+
+                // Animation loop
+                function animate() {
+                    requestAnimationFrame(animate);
+
+                    // Auto-rotate icosahedron
+                    icosahedron.rotation.y += 0.001;
+                    icosahedron.rotation.x += 0.0005;
+
+                    // Mouse-influenced rotation (lerped)
+                    currentRotX += (targetRotX - currentRotX) * 0.02;
+                    currentRotY += (targetRotY - currentRotY) * 0.02;
+                    icosahedron.rotation.x += currentRotX * 0.01;
+                    icosahedron.rotation.y += currentRotY * 0.01;
+
+                    // Animate particles upward
+                    const posArray = particles.geometry.attributes.position.array;
+                    for (let i = 0; i < particleCount; i++) {
+                        posArray[i * 3 + 1] += 0.002;
+                        if (posArray[i * 3 + 1] > 4) {
+                            posArray[i * 3 + 1] = -4;
+                        }
+                    }
+                    particles.geometry.attributes.position.needsUpdate = true;
+
+                    // Parallax effect
+                    scene.position.y = -heroParallaxY * 0.003;
+
+                    renderer.render(scene, camera);
+                }
+                animate();
+
+                // Resize handler
+                window.addEventListener('resize', () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            }
+
+            // Initialize Three.js once the library is loaded
+            if (typeof THREE !== 'undefined') {
+                initThreeScene();
+            } else {
+                window.addEventListener('load', () => {
+                    if (typeof THREE !== 'undefined') {
+                        initThreeScene();
+                    }
+                });
+            }
+
+        })();
     </script>
 </body>
+
 </html>
