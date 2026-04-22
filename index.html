@@ -24,17 +24,62 @@
         }
 
         :root {
-            --bg-primary: #080808;
-            --bg-secondary: #111111;
-            --bg-tertiary: #1a1a1a;
-            --border: #2a2a2a;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --text-muted: #505050;
-            --accent-white: rgba(255, 255, 255, 0.06);
-            --glow: 0 0 30px rgba(255, 255, 255, 0.08);
+            /* Light Theme */
+            --light-bg: #FDFDFD;
+            --light-bg-alt: #F4F4F4;
+            --light-border: #E0E0E0;
+            --light-text-primary: #111111;
+            --light-text-secondary: #555555;
+            --light-text-muted: #A0A0A0;
+            
+            /* Dark Theme */
+            --dark-bg: #090909;
+            --dark-bg-alt: #131313;
+            --dark-border: #2A2A2A;
+            --dark-text-primary: #FFFFFF;
+            --dark-text-secondary: #999999;
+            --dark-text-muted: #444444;
+
+            /* Dynamic Base (Defaults to Dark) */
+            --bg-primary: var(--dark-bg);
+            --bg-secondary: var(--dark-bg-alt);
+            --border: var(--dark-border);
+            --text-primary: var(--dark-text-primary);
+            --text-secondary: var(--dark-text-secondary);
+            --text-muted: var(--dark-text-muted);
+
+            /* Accents */
+            --accent: #F5951D;
+            --accent-hover: #D77B10;
+            
+            --glow: 0 0 30px rgba(245, 149, 29, 0.15);
             --font-display: 'Syne', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
+            --section-pd: 140px;
+        }
+
+        .light-section {
+            --bg-primary: var(--light-bg);
+            --bg-secondary: var(--light-bg-alt);
+            --border: var(--light-border);
+            --text-primary: var(--light-text-primary);
+            --text-secondary: var(--light-text-secondary);
+            --text-muted: var(--light-text-muted);
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            transition: background-color 0.6s ease, color 0.6s ease;
+        }
+
+        .dark-section {
+            --bg-primary: var(--dark-bg);
+            --bg-secondary: var(--dark-bg-alt);
+            --border: var(--dark-border);
+            --text-primary: var(--dark-text-primary);
+            --text-secondary: var(--dark-text-secondary);
+            --text-muted: var(--dark-text-muted);
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            transition: background-color 0.6s ease, color 0.6s ease;
         }
 
         html {
@@ -44,7 +89,7 @@
         }
 
         body {
-            background: var(--bg-primary);
+            background-color: var(--bg-primary);
             color: var(--text-secondary);
             font-family: var(--font-mono);
             font-weight: 400;
@@ -361,11 +406,23 @@
         .section-heading {
             font-family: var(--font-display);
             font-weight: 800;
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-size: clamp(3rem, 7vw, 5.5rem);
             color: var(--text-primary);
-            letter-spacing: -0.04em;
-            line-height: 1.1;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
             margin-bottom: 48px;
+            text-transform: uppercase;
+        }
+
+        .section-heading .light-weight {
+            font-weight: 300;
+            -webkit-text-stroke: 1px var(--text-primary);
+            color: transparent;
+        }
+
+        .section-heading .accent {
+            color: var(--accent);
+            font-style: italic;
         }
 
         .section-watermark {
@@ -494,16 +551,26 @@
         .hero-name {
             font-family: var(--font-display);
             font-weight: 800;
-            font-size: clamp(4rem, 11vw, 9rem);
+            font-size: clamp(5rem, 12vw, 11rem);
             color: var(--text-primary);
-            letter-spacing: -0.04em;
-            line-height: 0.95;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .hero-name .line-2 {
             display: block;
-            padding-left: clamp(1rem, 3vw, 3rem);
+            font-weight: 300;
+            -webkit-text-stroke: 2px var(--text-primary);
+            color: transparent;
+            padding-left: clamp(2rem, 5vw, 6rem);
+        }
+        
+        .hero-name .accent {
+            color: var(--accent);
+            -webkit-text-stroke: 0;
+            font-style: italic;
         }
 
         .hero-typing {
@@ -554,38 +621,69 @@
         }
 
         .btn {
-            font-family: var(--font-mono);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-            padding: 14px 28px;
-            border: 1px solid var(--text-primary);
+            padding: 16px 36px;
+            border: 1px solid var(--border);
             background: transparent;
             color: var(--text-primary);
             text-decoration: none;
             cursor: none;
-            transition: all 0.3s ease;
-            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 50px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .btn::after {
+            content: '↗';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            transition: transform 0.4s ease, background 0.4s ease;
+            font-family: sans-serif;
+            font-weight: 400;
+            margin-left: 8px;
         }
 
         .btn:hover {
-            background: rgba(255, 255, 255, 0.06);
-            box-shadow: var(--glow);
-            transform: translateY(-2px);
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            border-color: var(--text-primary);
+            transform: translateY(-4px);
+        }
+
+        .btn:hover::after {
+            transform: translate(4px, -4px);
+            background: var(--bg-primary);
+            color: var(--text-primary);
         }
 
         .btn-filled {
-            background: var(--text-primary);
-            color: var(--bg-primary);
+            background: var(--accent);
+            color: #fff;
+            border: none;
+        }
+
+        .btn-filled::after {
+            background: #fff;
+            color: var(--accent);
         }
 
         .btn-filled:hover {
-            background: #e0e0e0;
-            color: var(--bg-primary);
+            background: var(--accent-hover);
+            color: #fff;
         }
 
         .hero-socials {
@@ -749,7 +847,7 @@
 
         .geo-art .shape {
             position: absolute;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border);
         }
 
         .geo-art .shape-1 {
@@ -775,13 +873,13 @@
             bottom: 20%;
             left: 35%;
             transform: rotate(15deg);
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--bg-primary);
         }
 
         .geo-art .shape-4 {
             width: 200px;
             height: 1px;
-            background: rgba(255, 255, 255, 0.06);
+            background: var(--border);
             top: 60%;
             left: 10%;
             transform: rotate(-20deg);
@@ -801,7 +899,8 @@
             position: absolute;
             width: 4px;
             height: 4px;
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--text-primary);
+            opacity: 0.2;
             border-radius: 50%;
         }
 
@@ -1606,7 +1705,7 @@
     </div>
 
     <!-- 01 / HERO -->
-    <section id="hero">
+    <section id="hero" class="dark-section">
         <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <div class="hero-available reveal">
@@ -1614,7 +1713,7 @@
                 // AVAILABLE FOR WORK
             </div>
             <h1 class="hero-name reveal reveal-delay-1">
-                Mahad<span class="line-2">Ahmad</span>
+                Mahad<span class="line-2">Ahmad <span class="accent">.</span></span>
             </h1>
             <div class="hero-typing reveal reveal-delay-2">
                 <span id="typingText"></span><span class="cursor-blink"></span>
@@ -1622,8 +1721,8 @@
             <p class="hero-tagline reveal reveal-delay-3">"A computer science student passionate about web & mobile
                 development, video editing, and Python."</p>
             <div class="hero-ctas reveal reveal-delay-4">
-                <a href="#about" class="btn">[ View My Work ]</a>
-                <!-- <a href="./cv.pdf" class="btn btn-filled" download>[ Download CV ]</a> -->
+                <a href="#about" class="btn">View My Work</a>
+                <!-- <a href="./cv.pdf" class="btn btn-filled" download>Download CV</a> -->
             </div>
             <div class="hero-socials reveal reveal-delay-5">
                 <a href="https://github.com/mahadkhaann" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -1660,12 +1759,12 @@
     </section>
 
     <!-- 02 / ABOUT -->
-    <section id="about">
+    <section id="about" class="light-section">
         <div class="section-watermark parallax-watermark">02</div>
         <div class="about-grid">
             <div>
                 <div class="section-label reveal">02 / About</div>
-                <h2 class="section-heading reveal reveal-delay-1">Building digital<br>experiences that matter.</h2>
+                <h2 class="section-heading reveal reveal-delay-1">Building digital<br><span class="light-weight">experiences</span> <span class="accent">that matter.</span></h2>
                 <p class="about-bio reveal reveal-delay-2">
                     I am a computer science student, constantly learning and exploring new technologies. I have a strong
                     foundation in mobile and web development, along with expertise in video editing and Python. What
@@ -1704,10 +1803,10 @@
     </section>
 
     <!-- 03 / SKILLS -->
-    <section id="skills">
+    <section id="skills" class="dark-section">
         <div class="section-watermark parallax-watermark">03</div>
         <div class="section-label reveal">03 / Skills</div>
-        <h2 class="section-heading reveal reveal-delay-1">Tools of<br>the trade.</h2>
+        <h2 class="section-heading reveal reveal-delay-1">Tools of <br><span class="light-weight">the trade</span><span class="accent">.</span></h2>
         <div class="skills-clusters reveal reveal-delay-2">
             <div>
                 <div class="skill-cluster-label">Languages</div>
@@ -1802,10 +1901,10 @@
     -->
 
     <!-- 05 / EXPERIENCE -->
-    <section id="experience">
+    <section id="experience" class="light-section">
         <div class="section-watermark parallax-watermark">05</div>
         <div class="section-label reveal">05 / Experience</div>
-        <h2 class="section-heading reveal reveal-delay-1" style="text-align:center;">Where I've<br>worked.</h2>
+        <h2 class="section-heading reveal reveal-delay-1" style="text-align:center;">Where I've<br><span class="light-weight">worked</span><span class="accent">.</span></h2>
         <div class="timeline">
             <div class="timeline-item reveal">
                 <div class="timeline-node current"></div>
@@ -1848,10 +1947,10 @@
     -->
 
     <!-- 07 / CONTACT -->
-    <section id="contact">
+    <section id="contact" class="dark-section">
         <div class="section-watermark parallax-watermark">07</div>
         <div class="section-label reveal">07 / Contact</div>
-        <h2 class="section-heading reveal reveal-delay-1">Let's build<br>something together.</h2>
+        <h2 class="section-heading reveal reveal-delay-1">Let's build<br><span class="light-weight">something</span> <span class="accent">together.</span></h2>
         <div class="contact-grid">
             <form class="reveal reveal-delay-2" id="contactForm" onsubmit="handleSubmit(event)">
                 <div class="form-group">
@@ -1867,7 +1966,7 @@
                     <textarea id="message" name="message" placeholder="Tell me about your project..."
                         required></textarea>
                 </div>
-                <button type="submit" class="btn-submit">[ SEND MESSAGE → ]</button>
+                <button type="submit" class="btn btn-filled">Send Message</button>
             </form>
             <div class="contact-info reveal reveal-delay-3">
                 <div>
@@ -2148,7 +2247,7 @@
             // ===== CONTACT FORM HANDLER =====
             window.handleSubmit = function (e) {
                 e.preventDefault();
-                const btn = e.target.querySelector('.btn-submit');
+                const btn = e.target.querySelector('.btn');
                 const originalText = btn.textContent;
                 btn.textContent = '[ SENT ✓ ]';
                 btn.style.background = 'transparent';
